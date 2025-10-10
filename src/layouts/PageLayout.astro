@@ -1,0 +1,28 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import GridBackgroundContainer from '../components/HexGridContainer/HexBackgroundContainer.jsx'
+import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
+import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
+import "../styles/global.css"
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+	</head>
+	<body>
+
+		<!-- <Header /> -->
+    <main class="bg-amber-300">
+      <slot />
+    </main>
+		<!-- <Footer /> -->
+    <GridBackgroundContainer client:load hexSize='700px' lightOutside="#3df03a" hexBrightness="15%" width="w-full">
+    </GridBackgroundContainer>
+      
+	</body>
+</html>
+
+
