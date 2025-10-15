@@ -1,5 +1,31 @@
 @import "tailwindcss";
 
+* {
+  /*border: red 2px solid;*/
+}
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --color-primary: #14771e;
+  --color-primary-light: #20c331;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #f5f2e8;
+    --foreground: #ede6db;
+    --dark: #171514;
+  }
+}
+
 html,
 body {
   box-sizing: border-box;

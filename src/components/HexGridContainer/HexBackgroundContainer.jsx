@@ -1,6 +1,7 @@
 import PropTypes from "prop-types";
 const hexPattern = "/textures/grid.svg";
 const texture = "/textures/real-carbon-fibre.png";
+import { useEffect } from "react";
 
 function HexBackgroundContainer({
   children,
@@ -18,6 +19,7 @@ function HexBackgroundContainer({
   function moveLight(event) {
     if (mouseEffect) {
       const light = document.getElementById("light");
+      if (!light) return;
       light.style.display = "block";
       light.style.left = `${event.clientX}px`;
       light.style.top = `${event.clientY}px`;
@@ -31,11 +33,36 @@ function HexBackgroundContainer({
     }
   }
 
+  useEffect(() => {
+    function handleMouseMove(event) {
+      const light = document.getElementById("light");
+      if (!light) return;
+      light.style.display = "block";
+      light.style.left = `${event.clientX}px`;
+      light.style.top = `${event.clientY}px`;
+    }
+
+    function handleMouseLeave() {
+      const light = document.getElementById("light");
+      if (!light) return;
+      light.style.display = "none";
+    }
+
+    // Attach to window or document instead
+    window.addEventListener("mousemove", handleMouseMove);
+    window.addEventListener("mouseleave", handleMouseLeave);
+
+    return () => {
+      window.removeEventListener("mousemove", handleMouseMove);
+      window.removeEventListener("mouseleave", handleMouseLeave);
+    };
+  }, []);
+
   return (
     <div
       onMouseMove={moveLight}
       onMouseLeave={mouseExit}
-      className={`${width} ${height} relative overflow-hidden m-0 p-0`}
+      className={`${width} ${height} fixed top-0 loft-0 z-[-10] overflow-hidden m-0 p-0`}
       style={{ backgroundColor: bgColor }}
     >
       <div
