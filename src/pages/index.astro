@@ -1,10 +1,14 @@
 ---
 import PageLayout from "../layouts/PageLayout.astro"
 import Hero from "../components/Hero.jsx"
+import AboutMe from "../components/AboutMe.astro"
+import SkillCloud from "../components/SkillCloud.jsx"
 ---
 
 <PageLayout>
   <Hero client:load />
+  <AboutMe />
+  <SkillCloud client:only="react" />
   home
   page
 </PageLayout>
