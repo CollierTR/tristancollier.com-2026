@@ -7,7 +7,7 @@ import CardLayoutGrid from '../layouts/CardLayoutGrid.astro'
 const posts = (await getCollection('blog')).sort(
 	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
 );
-const featuredPosts = posts.slice(-2) // set number of posts for display
+const featuredPosts = posts.slice(0, 2) // set number of posts for display
 ---
 
 <CardLayoutGrid title="FEATURED POSTS" buttonTitle="See All Posts" buttonLink="/blog">
