@@ -3,12 +3,16 @@ import PageLayout from "../layouts/PageLayout.astro"
 import Hero from "../components/Hero.jsx"
 import AboutMe from "../components/AboutMe.astro"
 import SkillCloud from "../components/SkillCloud.jsx"
+import Footer from "../components/Footer.astro"
+import FeaturedProjects from "../components/FeaturedProjects.astro"
+import FeaturedBlogPosts from "../components/FeaturedBlogPosts.astro"
 ---
 
 <PageLayout>
   <Hero client:load />
   <AboutMe />
   <SkillCloud client:only="react" />
-  home
-  page
+  <FeaturedBlogPosts />
+  <FeaturedProjects />
+  <Footer />
 </PageLayout>
