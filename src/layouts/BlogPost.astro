@@ -17,9 +17,9 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 		<BaseHead title={title} description={description} />
 	</head>
 
-	<body>
-    <main class="text-white">
-			<article>
+  <body class="flex flex-col place-items-center">
+    <main class="text-white w-10/12 lg:w-8/12">
+			<article class=''>
 				<div class="hero-image">
 					{heroImage && <Image width={1020} height={510} src={heroImage} alt="" />}
 				</div>
@@ -42,8 +42,10 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 				</div>
 			</article>
     </main>
-    <GridBackgroundContainer client:load hexSize='700px' lightOutside="#3df03a" hexBrightness="15%" width="w-full">
+    <GridBackgroundContainer client:load hexSize='700px' lightOutside="#3df03a" hexBrightness="15%" width="w-screen" >
     </GridBackgroundContainer>
-		<Footer />
+    <Footer />
 	</body>
 </html>
+
+
