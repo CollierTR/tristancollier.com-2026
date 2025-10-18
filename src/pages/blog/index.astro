@@ -13,7 +13,7 @@ const posts = (await getCollection('blog')).sort(
 ---
 
 <PageLayout>
-  <CardLayoutGrid title="FEATURED POSTS" button='' >
+  <CardLayoutGrid title="Blog Posts" button='' >
     {
       posts.map((post) => (
         <BlogCard link={`/blog/${post.id}/`} title={post.data.title} description={post.data.description} img={post.data.heroImage} date={post.data.pubDate} />
