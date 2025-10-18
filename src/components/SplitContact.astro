@@ -1,0 +1,96 @@
+
+
+
+    <div class="w-11/12 flex justify-center mb-40 mt-32 gap-x-20 mx-auto lg:flex-row text-primary-light flex-col place-items-center lg:place-items-start gap-40">
+      <div class="flex-col flex gap-4 lg:gap-10 lg:w-5/12 w-10/12 blackOutline ">
+        <h1 class="lg:text-6xl text-primary-light text-5xl">
+          Let&apos;s Get in Touch!
+        </h1>
+        <p class="lg:text-2xl text-2xl text-white">
+          Have a question?
+          <br /> 
+          <br /> 
+          I&apos;d be happy to help! Please feel free to reach out to me
+          using the contact form or one of the links below.
+        </p>
+        <div class="flex gap-6">
+          <a href="tel:5402206532">
+            <button class="bg-black border-2 shadow-2xl text-white border-primary hover:border-primary-light py-4 px-10 text-2xl rounded-2xl">Call</button>
+          </a>
+          <a href="mailto:tristancollier777@gmail.com">
+            <button class="bg-black border-2 shadow-2xl text-white border-primary hover:border-primary-light py-4 px-10 text-2xl rounded-2xl">Email</button>
+          </a>
+        </div>
+      </div>
+
+      <div class="lg:w-5/12 w-full  sm:w-9/12">
+        <form
+          class="flex flex-col gap-4 md:gap-6 place-items-center"
+          name="Contact Form"
+          method="post"
+          action="/contact"
+        >
+          <input type="hidden" name="form-name" value="Contact Form" />
+          <span class="flex gap-2 flex-col md:w-3/4 w-10/12">
+            <input type="hidden" name="form-name" value="Contact Form" />
+            <label for="firstName" class="text-base md:text-xl text-white ">
+              First name:
+            </label>
+            <input
+              type="text"
+              name="firstName"
+              required
+              id="firstName"
+              placeholder="John"
+              class="md:text-xl border-2 rounded-lg p-2 border-primary bg-black"
+            />
+          </span>
+          <span class="flex gap-2 flex-col md:w-3/4 w-10/12">
+            <label for="lastName" class="text-base md:text-xl text-white">
+              Last Name:
+            </label>
+            <input
+              type="text"
+              placeholder="Doe"
+              class="md:text-xl border-2 rounded-lg p-2 border-primary bg-black"
+              name="lastName"
+              required
+              id="lastName"
+            />
+			<input type="hidden" name="isStudentForm" value="Not Student Form" />
+          </span>
+          <span class="flex gap-2 flex-col w-10/12 md:w-3/4">
+            <label for="email" class="text-base md:text-xl text-white">
+              Email:
+            </label>
+            <input
+              class="md:text-xl border-2 rounded-lg p-2 border-primary bg-black"
+              type="email"
+              required
+              placeholder="example@email.com"
+              id="email"
+              name="email"
+            />
+          </span>
+          <span class="flex gap-2 flex-col w-10/12 md:w-3/4">
+            <label for="text" class="text-base md:text-xl text-white">
+              How can we help you?
+            </label>
+            <textarea
+              required
+              id="text"
+              name="text"
+              placeholder="You're text here..."
+              class="ease-soft md:text-xl border-2 rounded-lg p-2 border-primary h-40 text-wrap bg-black"
+            ></textarea>
+          </span>
+          <button
+            type="submit"
+            class=" border-2 border-primary hover:border-primary-light text-white  bg-black rounded-lg w-10/12 md:w-3/4 md:text-2xl robo py-2 md:py-3"
+          >
+            Submit
+          </button>
+        </form>
+      </div>
+    </div>
+

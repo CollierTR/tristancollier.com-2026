@@ -1,9 +1,9 @@
 ---
+import PageLayout from "../layouts/PageLayout.astro";
 import BaseHead from '../components/BaseHead.astro';
 import GridBackgroundContainer from '../components/HexGridContainer/HexBackgroundContainer.jsx'
 import Footer from '../components/Footer.astro';
 import Nav from '../components/Nav.jsx'
-import Header from '../components/Header.astro';
 import Hero from '../components/Hero.jsx'
 import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 import "../styles/global.css"
@@ -15,15 +15,12 @@ import "../styles/global.css"
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
 	</head>
 	<body>
-    <Nav client:load />
-		<!-- <Header /> -->
-    <main class="text-white">
-      <slot />
-    </main>
-		<!-- <Footer /> -->
+<Nav client:load />
+    <div class="grid place-content-center h-screen">
+      <p class="text-primary-light text-4xl blackOutline">Page Not Found...</p>
+    </div>
     <GridBackgroundContainer client:load hexSize='700px' lightOutside="#3df03a" hexBrightness="15%" width="w-full">
     </GridBackgroundContainer>
-      
 	</body>
 </html>
 
