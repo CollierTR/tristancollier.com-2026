@@ -136,3 +136,7 @@ svg {
 .recursive-border * {
   border: 1px solid red;
 }
+
+.blog-bg {
+  background-color: rgba(0, 0, 0, 0.63);
+}

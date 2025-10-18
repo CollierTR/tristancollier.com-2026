@@ -18,13 +18,15 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 	</head>
 
   <body class="flex flex-col place-items-center">
-    <main class="text-white w-10/12 lg:w-8/12">
-			<article class=''>
+    <main class="text-white w-full md:w-10/12 lg:w-8/12 blog-bg">
+			<article>
 				<div class="hero-image">
 					{heroImage && <Image width={1020} height={510} src={heroImage} alt="" />}
 				</div>
-				<div class="prose">
-					<div class="title">
+				<div class="prose prose-invert prose-img:mx-0 prose-img:w-full max-w-none px-4">
+
+
+					<div class="title pt-8">
 						<div class="date">
 							<FormattedDate date={pubDate} />
 							{
@@ -38,6 +40,8 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 						<h1>{title}</h1>
 						<hr />
 					</div>
+
+
 					<slot />
 				</div>
 			</article>
