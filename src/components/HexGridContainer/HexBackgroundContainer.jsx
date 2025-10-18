@@ -1,6 +1,12 @@
 import PropTypes from "prop-types";
-const hexPattern = "/textures/grid.svg";
-const texture = "/textures/real-carbon-fibre.png";
+// FIX: I need to fix this...
+
+// const hexPattern = "/textures/grid.svg";
+// const texture = "/textures/real-carbon-fibre.png";
+// const hexPattern = "./grid.svg";
+// const texture = "./real-carbon-fibre.png";
+import hexPattern from "../../assets/grid.svg";
+import texture from "../../assets/real-carbon-fibre.png";
 import { useEffect } from "react";
 
 function HexBackgroundContainer({
@@ -70,7 +76,7 @@ function HexBackgroundContainer({
         className="absolute top-0 left-0 z-20 w-full h-full m-0 p-0"
         style={{
           backgroundSize: hexSize,
-          backgroundImage: "url(" + hexPattern + ")",
+          backgroundImage: `url(${hexPattern})`,
           filter: "brightness(" + hexBrightness + ")",
         }}
       ></div>
@@ -80,7 +86,7 @@ function HexBackgroundContainer({
           id="texture"
           className="w-full h-full absolute z-30 top-0 left-0 m-0 p-0 hidden sm:block"
           style={{
-            backgroundImage: "url(" + texture + ")",
+            backgroundImage: `url(${texture})`,
             backgroundSize: "20px",
           }}
         ></div>
