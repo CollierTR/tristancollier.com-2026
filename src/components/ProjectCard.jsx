@@ -16,7 +16,7 @@ const ProjectCard = ({
   img = "https://placehold.co/600x400",
   title = "Awsome Project",
   description = descriptionText,
-  weblink,
+  weblink = "/test",
   githubLink,
   youtubeLink,
   technologiesArr = techArr,
@@ -32,12 +32,12 @@ const ProjectCard = ({
 
       <div className="flex flex-col justify-center">
         <div className="flex justify-between place-items-center">
-          <a href={weblink}>
+          <a href={weblink} target="_blank">
             <p className="text-3xl m-4 font-medium hover:text-primary-light cursor-pointer">
               {title}
             </p>
           </a>
-          <a href={weblink}>
+          <a href={weblink} target="_blank">
             <FontAwesomeIcon
               icon={faArrowUpRightFromSquare}
               className="m-4 text-2xl hover:text-primary-light cursor-pointer"
