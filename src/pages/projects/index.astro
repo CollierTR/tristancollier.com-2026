@@ -1,0 +1,28 @@
+---
+import { getCollection } from 'astro:content';
+import CardLayoutGrid from '../../layouts/CardLayoutGrid.astro';
+import PageLayout from "../../layouts/PageLayout.astro";
+import Footer from "../../components/Footer.astro";
+import ProjectCard from "../../components/ProjectCard.astro";
+
+const projects = (await getCollection('projects'));
+---
+
+<PageLayout>
+  <CardLayoutGrid title="My Projects" button='' >
+    {
+      projects.map((project) => (
+        <ProjectCard
+          title={project.data.title}
+          description={project.data.description}
+          technologiesArr={project.data.tags}
+          weblink={`/projects/${project.id}`}
+          githubLink={project.data.githubLink}
+          youtubeLink={project.data.youtubeLink}
+          img={project.data.image}
+        />
+      ))
+    }
+  </CardLayoutGrid>
+  <Footer />
+</PageLayout>

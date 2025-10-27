@@ -1,0 +1,81 @@
+---
+import { faGithub } from "@fortawesome/free-brands-svg-icons/faGithub";
+import { faYoutube } from "@fortawesome/free-brands-svg-icons/faYoutube";
+import { faArrowUpRightFromSquare } from "@fortawesome/free-solid-svg-icons/faArrowUpRightFromSquare";
+import { faGlobe } from "@fortawesome/free-solid-svg-icons/faGlobe";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
+const descriptionText =
+  "Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum voluptates tempore voluptatem provident maxime reiciendis delectus rem esse mollitia ut culpa libero, quis necessitatibus eius corporis veniam iusto sapiente. Eligendi. Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum voluptates tempore voluptatem provident maxime reiciendis delectus rem esse mollitia ut culpa libero, quis necessitatibus eius corporis veniam iusto sapiente. Eligendi.";
+
+const techArr = ["react", "html", "css"];
+
+const {
+  img = "https://placehold.co/600x400",
+  title = "Awsome Project",
+  description = descriptionText,
+  weblink = "/test",
+  githubLink,
+  youtubeLink,
+  technologiesArr = techArr,
+} = Astro.props;
+---
+    <div class="w-full bg-black  mx-auto border-2 border-primary rounded-2xl overflow-hidden p-2 pb-6">
+  <a href={weblink}>
+      <div class="grid w-full rounded-t-xl overflow-hidden relative">
+        <img src={img} alt="" class="w-full" />
+        <div class=" bg-black absolute h-full w-full opacity-0 text-lg  fadeTransition p-4">
+          <p>{description}</p>
+        </div>
+      </div>
+  </a>
+
+      <div class="flex flex-col justify-center">
+        <div class="flex justify-between place-items-center">
+          <a href={weblink}>
+            <p class="text-3xl m-4 font-medium hover:text-primary-light cursor-pointer">
+              {title}
+            </p>
+          </a>
+        </div>
+        <div class="w-full border rounded-full border-primary-light mx-auto"></div>
+        <p class="m-4 mb-2 font-light text-lg">Technologies Used:</p>
+        <div class="flex flex-wrap gap-4 mx-4 text-primary-light text-nowrap">
+          {technologiesArr.map((item) => (
+            <p>{item}</p>
+          ))}
+        </div>
+        <p class="m-4 mb-2 font-light text-lg">Links:</p>
+        <div class="flex gap-4 mx-4">
+          {weblink && (
+            <a href={weblink}>
+              <FontAwesomeIcon
+                icon={faGlobe}
+                size="lg"
+                class="text-2xl cursor-pointer hover:text-primary-light"
+              />
+            </a>
+          )}
+          {githubLink && (
+            <a href={githubLink}>
+              <FontAwesomeIcon
+                icon={faGithub}
+                size="lg"
+                class="text-2xl cursor-pointer hover:text-primary-light"
+              />
+            </a>
+          )}
+          {youtubeLink && (
+            <a href={youtubeLink}>
+              <FontAwesomeIcon
+                icon={faYoutube}
+                size="lg"
+                class="text-2xl text-red-700 cursor-pointer hover:text-primary-light"
+              />
+            </a>
+          )}
+        </div>
+      </div>
+    </div>
+
+
