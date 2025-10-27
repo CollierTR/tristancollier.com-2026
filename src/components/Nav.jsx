@@ -25,6 +25,16 @@ const Nav = () => {
           </a>
         )}
         {navOpen && (
+          <a href="/blog">
+            <p className="py-2 rounded-full  cursor-pointer">Blog</p>
+          </a>
+        )}
+        {navOpen && (
+          <a href="/projects">
+            <p className="py-2 rounded-full  cursor-pointer">Projects</p>
+          </a>
+        )}
+        {navOpen && (
           <a href="/contact">
             <p className="py-2 rounded-full  cursor-pointer">Contact</p>
           </a>
