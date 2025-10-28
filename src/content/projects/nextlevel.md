@@ -6,6 +6,7 @@ image: "/next-level.png"
 tags: ["React", "Next", "Tailwind CSS", "Markdown"]
 weblink: "https://nextlevelmo.com/"
 githubLink: "https://github.com/CollierTR/next-level-website"
+isFeatured: true
 ---
 
 Here is a sample of some basic Markdown syntax that can be used when writing Markdown content in Astro.

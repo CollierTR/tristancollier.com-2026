@@ -28,6 +28,7 @@ const projects = defineCollection({
       youtubeLink: z.string().optional(),
       tags: z.array(z.string()).optional(),
       image: z.string().optional(),
+      isFeatured: z.boolean().optional(),
     }),
 });
 
