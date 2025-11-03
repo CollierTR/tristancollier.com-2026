@@ -6,13 +6,13 @@ const {title="My Title", buttonLink='#', buttonTitle="click me!", button=true} =
   <div class="flex flex-col w-full justify-center place-items-center ">
     <p class="text-3xl md:text-4xl lg:text-5xl blackOutline text-center">{title}</p>
     <div class="w-1/6 border-2 my-3 backOutline rounded-full border-primary"></div>
-      <ul class ="grid grid-cols-1 xl:grid-cols-2 my-10 place-content-center w-10/12 gap-10 grow">
+      <div class ="grid grid-cols-1 xl:grid-cols-2 my-10 place-content-center w-10/12 gap-10 grow">
         <slot /> 
-      </ul>
+      </div>
   </div>
   {
   button &&
-  <a href={buttonLink} class='my-12 '>
+  <a href={buttonLink} aria-label={buttonTitle} class='my-12 '>
     <button class='border border-primary-light text-2xl text-white py-2 px-8 text-pretty mt-2 w-fit rounded-xl bg-black cursor-pointer'>{buttonTitle}</button>
       </a>
   }
