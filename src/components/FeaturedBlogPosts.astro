@@ -15,7 +15,14 @@ const featuredPosts = posts.slice(0, 2) // set number of posts for display
 <CardLayoutGrid title="FEATURED POSTS" buttonTitle="See All Posts" buttonLink="/blog">
   {
     featuredPosts.map((post) => (
-  <BlogCard link={`/blog/${post.id}/`} title={post.data.title} description={post.data.description} img={post.data.heroImage} date={post.data.pubDate} />
+      <BlogCard 
+        link={`/blog/${post.id}/`} 
+        title={post.data.title} 
+        description={post.data.description} 
+        img={post.data.heroImage} 
+        date={post.data.pubDate} 
+        tags={post.data.tags}
+      />
     ))
   }
 </CardLayoutGrid>

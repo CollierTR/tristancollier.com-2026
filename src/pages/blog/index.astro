@@ -14,7 +14,14 @@ const posts = (await getCollection('blog')).sort(
   <CardLayoutGrid title="Blog Posts" button='' >
     {
       posts.map((post) => (
-        <BlogCard link={`/blog/${post.id}/`} title={post.data.title} description={post.data.description} img={post.data.heroImage} date={post.data.pubDate} />
+      <BlogCard 
+        link={`/blog/${post.id}/`} 
+        title={post.data.title} 
+        description={post.data.description} 
+        img={post.data.heroImage} 
+        date={post.data.pubDate} 
+        tags={post.data.tags}
+      />
       ))
     }
   </CardLayoutGrid>
