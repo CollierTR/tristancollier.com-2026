@@ -29,7 +29,6 @@ How do you use an RSS reader? It's super simple. All you have to do is download 
 
 You can then add a new feed to your subscriptions. You paste in the feed that you want to follow. 
 
-> [!NOTE]
 > You have the option to mark all of the existing posts in the feed as read. 
 
 ![Alligator add Feed](../../assets/rss/alligator-add-feed.png)  
@@ -71,7 +70,6 @@ newsboat
 
 When Newsboat starts you can hit **shift + R** to load your feeds.
 
-> [!NOTE]
 > There is a status bar at the bottom of the screen that tells you what the controls are.
 
 Simply navigate the list with your up/down arrows and hit enter to read.
